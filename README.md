@@ -1,6 +1,20 @@
 # Let Samples Speak: Mitigating Spurious Correlation by Exploiting the Clusterness of Samples
 
-This repository contains experiments for the paper _Let Samples Speak: Mitigating Spurious Correlation by Exploiting the Clusterness of Samples_
+This repository contains experiments for the paper _Let Samples Speak: Mitigating Spurious Correlation by Exploiting the Clusterness of Samples_ (CVPR 2025)
+
+[[Project]](https://davelee-uestc.github.io/nsf_cvpr25) [[Paper]](https://cvpr.thecvf.com/virtual/2025/poster/34895)
+
+## Bibtex
+
+```
+@inproceedings{li2024let,
+            title={Let Samples Speak: Mitigating Spurious Correlation by Exploiting the Clusterness of Samples},
+            author={Weiwei Li and Junzhuo Liu and Yuanyuan Ren and Yuchen Zheng and Yahao Liu and Wen Li},
+            booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+            year={2025},
+          }
+```
+
 ## Introduction
 Deep learning models are known to often learn spurious features that correlate with the label during training but are irrelevant to the prediction task. Existing methods typically address this issue by annotating potential spurious attributes, or filtering spurious features based on some empirical assumptions (e.g., simplicity of bias). However, these methods may yield unsatisfying performance due to the intricate and elusive nature of spurious correlations in real-world data. In this paper, we propose a data-oriented approach to mitigate the spurious correlation in deep learning models. We observe that samples that are influenced by spurious features tend to exhibit a dispersed distribution in the learned feature space. This allows us to identify the presence of spurious features. Subsequently, we obtain a bias-invariant representation by neutralizing the spurious features based on a simple grouping strategy. Then, we learn a feature transformation to eliminate the spurious features by aligning with this bias-invariant representation. Finally, we update the classifier by incorporating the learned feature transformation and obtain an unbiased model. By integrating the aforementioned identifying, neutralizing, eliminating and updating procedures, we build an effective pipeline for mitigating spurious correlation. Experiments on four image and NLP debiasing benchmarks and one medical dataset demonstrate the effectiveness of our proposed approach, showing an improvement of worst-group accuracy by over 20% compared to standard empirical risk minimization (ERM). 
 ## File Structure

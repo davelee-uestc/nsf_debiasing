@@ -101,7 +101,7 @@ python3 ssc.py chexpert
 
 ## Reproduce from cached features
 
-Download the checkpoints and cached test features: [Google Drive](https://drive.google.com/file/d/19izs6nqfzH000Npg-7u5w-8vvNFYHr9N/view?usp=sharing).
+Download the checkpoints and cached test features: [Google Drive](https://drive.google.com/file/d/1M0n6h1c3nd1Q7fzlMMKgWwTJgwce9g0M/view?usp=sharing).
 
 From the repository root:
 
@@ -109,13 +109,16 @@ From the repository root:
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install torch gdown
-gdown --fuzzy "https://drive.google.com/file/d/19izs6nqfzH000Npg-7u5w-8vvNFYHr9N/view?usp=sharing" -O nsf_checkpoints_cache.zip
-unzip nsf_checkpoints_cache.zip
+gdown --fuzzy "https://drive.google.com/file/d/1M0n6h1c3nd1Q7fzlMMKgWwTJgwce9g0M/view?usp=sharing" -O nsf_checkpoints_cache_full.zip
+unzip nsf_checkpoints_cache_full.zip
 bash reproduce.sh
 ```
 
-The archive extracts into `checkpoints/` (eight checkpoint files) and `cache/`
-(four test-feature files). No original images or text datasets are required.
+The archive extracts into `checkpoints/` (eight full model checkpoints) and `cache/`
+(four test-feature files). Each checkpoint includes the complete encoder and
+classifier weights; NSF checkpoints also include the feature transformation.
+The evaluation script uses the cached features, so no original images or text
+datasets are required.
 The script prints mAcc and WGA, in percent, for ERM and NSF on each dataset.
 Only PyTorch is needed to run it; `gdown` is used for downloading the archive.
 

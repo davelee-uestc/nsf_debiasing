@@ -98,3 +98,31 @@ python3 ssc.py chexpert
 - We used the [DFR codebase](https://github.com/izmailovpavel/spurious_feature_learning) as the basis for our code.
 
 - Our model implementations are based on the `torchvision`, `timm` and `transformers` packages.
+
+## Reproduce from cached features
+
+Download the checkpoints and cached test features: [Google Drive](GOOGLE_DRIVE_DOWNLOAD_LINK).
+Replace `GOOGLE_DRIVE_DOWNLOAD_LINK` below with the shared download link.
+
+From the repository root:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install torch gdown
+gdown --fuzzy "GOOGLE_DRIVE_DOWNLOAD_LINK" -O nsf_checkpoints_cache.zip
+unzip nsf_checkpoints_cache.zip
+bash reproduce.sh
+```
+
+The archive extracts into `checkpoints/` (eight checkpoint files) and `cache/`
+(four test-feature files). No original images or text datasets are required.
+The script prints mAcc and WGA, in percent, for ERM and NSF on each dataset.
+Only PyTorch is needed to run it; `gdown` is used for downloading the archive.
+
+To evaluate one dataset or use a different extraction directory:
+
+```bash
+bash reproduce.sh --datasets waterbirds
+bash reproduce.sh --cache-dir /path/to/cache --checkpoint-dir /path/to/checkpoints
+```

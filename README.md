@@ -101,8 +101,7 @@ python3 ssc.py chexpert
 
 ## Reproduce from cached features
 
-Download the checkpoints and cached test features: [Google Drive](GOOGLE_DRIVE_DOWNLOAD_LINK).
-Replace `GOOGLE_DRIVE_DOWNLOAD_LINK` below with the shared download link.
+Download the checkpoints and cached test features: [Google Drive](https://drive.google.com/file/d/19izs6nqfzH000Npg-7u5w-8vvNFYHr9N/view?usp=sharing).
 
 From the repository root:
 
@@ -110,7 +109,7 @@ From the repository root:
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install torch gdown
-gdown --fuzzy "GOOGLE_DRIVE_DOWNLOAD_LINK" -O nsf_checkpoints_cache.zip
+gdown --fuzzy "https://drive.google.com/file/d/19izs6nqfzH000Npg-7u5w-8vvNFYHr9N/view?usp=sharing" -O nsf_checkpoints_cache.zip
 unzip nsf_checkpoints_cache.zip
 bash reproduce.sh
 ```
